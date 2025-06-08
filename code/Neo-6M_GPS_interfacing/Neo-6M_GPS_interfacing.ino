@@ -24,16 +24,61 @@ Serial output data :
 
 HardwareSerial gpsSerial(1); // Use UART1 on ESP32
 
-void setup() {
-  Serial.begin(115200);        // Serial monitor
-  gpsSerial.begin(9600, SERIAL_8N1, 16, 17);  // Baud rate, RX, TX pins
+String gpsData = "";
 
-  Serial.println("Reading raw GPS data...");
+void setup() {
+  Serial.begin(115200);
+  gpsSerial.begin(9600, SERIAL_8N1, 16, 17);  // RX=16, TX=17
+  Serial.println("Reading GPS raw data...");
 }
 
 void loop() {
   while (gpsSerial.available()) {
     char c = gpsSerial.read();
-    Serial.write(c); // Print raw NMEA sentence
+    if (c == '\n') {
+      // End of sentence
+      if (gpsData.startsWith("$GPRMC")) {
+        parseGPRMC(gpsData);
+      }
+      gpsData = "";
+    } else if (c != '\r') {
+      gpsData += c;
+    }
+  }
+}
+
+void parseGPRMC(String sentence) {
+  int fieldIndex = 0;
+  String fields[12];
+  int startIdx = 0;
+
+  for (int i = 0; i < sentence.length(); i++) {
+    if (sentence[i] == ',') {
+      fields[fieldIndex++] = sentence.substring(startIdx, i);
+      startIdx = i + 1;
+    }
+  }
+  fields[fieldIndex] = sentence.substring(startIdx); // Last field
+
+  // Now fields[3] = latitude, fields[4] = N/S, fields[5] = longitude, fields[6] = E/W
+  if (fields[2] == "A") {  // Data is valid
+    float rawLat = fields[3].toFloat();
+    float rawLon = fields[5].toFloat();
+
+    float latDegrees = int(rawLat / 100);
+    float latMinutes = rawLat - (latDegrees * 100);
+    float latitude = latDegrees + (latMinutes / 60.0);
+    if (fields[4] == "S") latitude = -latitude;
+
+    float lonDegrees = int(rawLon / 100);
+    float lonMinutes = rawLon - (lonDegrees * 100);
+    float longitude = lonDegrees + (lonMinutes / 60.0);
+    if (fields[6] == "W") longitude = -longitude;
+
+    Serial.print("Latitude: "); Serial.println(latitude, 6);
+    Serial.print("Longitude: "); Serial.println(longitude, 6);
+    Serial.println("---------------------------");
+  } else {
+    Serial.println("GPS data invalid ❌");
   }
 }
