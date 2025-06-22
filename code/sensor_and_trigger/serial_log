@@ -1,0 +1,216 @@
+=~=~=~=~=~=~=~=~=~=~=~= PuTTY log 2025.06.22 14:50:53 =~=~=~=~=~=~=~=~=~=~=~=
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:1
+load:0x3fff0030,len:4888
+load:0x40078000,len:16516
+load:0x40080400,len:4
+load:0x40080404,len:3476
+entry 0x400805b4
+Starting I2C communication with MPU6050...
+Wire.begin done ‚úÖ
+
+------
+Requesting sensor data...
+Bytes received: 14
+‚úÖ Sensor Values:
+Accel X: -1748
+Accel Y: 516
+Accel Z: 16640
+Total acceleration(g): 1.02
+------
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:1
+load:0x3fff0030,len:4888
+load:0x40078000,len:16516
+load:0x40080400,len:4
+load:0x40080404,len:3476
+entry 0x400805b4
+Starting I2C communication with MPU6050...
+Wire.begin done ‚úÖ
+------
+Requesting sensor data...
+Bytes received: 14
+‚úÖ Sensor Values:
+Accel X: -2220
+Accel Y: 704
+Accel Z: 16520
+Total acceleration(g): 1.02
+------
+Requesting sensor data...
+Bytes received: 14
+‚úÖ Sensor Values:
+Accel X: -2216
+Accel Y: 644
+Accel Z: 16584
+Total acceleration(g): 1.02
+------
+Requesting sensor data...
+Bytes received: 14
+‚úÖ Sensor Values:
+Accel X: -2192
+Accel Y: 568
+Accel Z: 16580
+Total acceleration(g): 1.02
+------
+-wAQóíRíÇä äí“íä“¢≤j
+
+rst:0x3 (SW%	E$U-IoWÇ¬L&B*%¢eMQ}1M!}	==Q)
+configsip: 0, SPIWP:0xe5
+XYEâôÇÅX}1âπÇ‚bEâôÈp0pl„Ûpü‰^80¯00,h‰ü‰Úvzp¯00,˜pﬂ‰rˆ:0x00
+mode:DIO, clock div:1
+load:0x3fff0030,len:4888
+load:0x40078000,len:16516
+load:0x40080400,len:4
+load:0x40080404,len:3476
+entry 0x400805b4
+Starting I2C communication with MPU6050...
+Wire.begin done ‚úÖ
+Sending to register 0x6B (Power Management)... I2C Transmission status: Success ‚úÖ
+Requesting sensor data...
+Bytes received: 14
+‚úÖ Sensor Values:
+Accel X: -2908
+Accel Y: 528
+Accel Z: 16532
+Total acceleration(g): 1.03
+------
+Requesting sensor data...
+Bytes received: 14
+‚úÖ Sensor Values:
+Accel X: -5864
+Accel Y: 1804
+Accel Z: 15680
+Total acceleration(g): 1.03
+------
+Requesting sensor data...
+Bytes received: 14
+‚úÖ Sensor Values:
+Accel X: 2560
+Accel Y: 924
+Accel Z: 2824
+Total acceleration(g): 0.24
+Possible Fall detected! Triggering alert ...
+------
+Requesting sensor data...
+Bytes received: 14
+‚úÖ Sensor Values:
+Accel X: -1560
+Accel Y: 912
+Accel Z: 17936
+Total acceleration(g): 1.10
+------
+Requesting sensor data...
+Bytes received: 14
+‚úÖ Sensor Values:
+Accel X: -2500
+Accel Y: 296
+Accel Z: 17008
+Total acceleration(g): 1.05
+------
+Requesting sensor data...
+Bytes received: 14
+‚úÖ Sensor Values:
+Accel X: 1732
+Accel Y: 20
+Accel Z: -1120
+Total acceleration(g): 0.13
+Possible Fall detected! Triggering alert ...
+manual trigger pressed! Triggering alert ...
+------
+Requesting sensor data...
+Bytes received: 14
+‚úÖ Sensor Values:
+Accel X: -2208
+Accel Y: 360
+Accel Z: 16468
+Total acceleration(g): 1.01
+------
+Requesting sensor data...
+Bytes received: 14
+‚úÖ Sensor Values:
+Accel X: -2236
+Accel Y: 368
+Accel Z: 16492
+Total acceleration(g): 1.02
+------
+Requesting sensor data...
+Bytes received: 14
+‚úÖ Sensor Values:
+Accel X: -2256
+Accel Y: 388
+Accel Z: 16612
+Total acceleration(g): 1.02
+------
+Requesting sensor data...
+Bytes received: 14
+‚úÖ Sensor Values:
+Accel X: -2248
+Accel Y: 344
+Accel Z: 16552
+Total acceleration(g): 1.02
+------
+Requesting sensor data...
+Bytes received: 14
+‚úÖ Sensor Values:
+Accel X: -2268
+Accel Y: 344
+Accel Z: 16632
+Total acceleration(g): 1.02
+------
+Requesting sensor data...
+Bytes received: 14
+‚úÖ Sensor Values:
+Accel X: -2188
+Accel Y: 388
+Accel Z: 16392
+Total acceleration(g): 1.01
+------
+Requesting sensor data...
+Bytes received: 14
+‚úÖ Sensor Values:
+Accel X: -2128
+Accel Y: 388
+Accel Z: 16488
+Total acceleration(g): 1.01
+------
+Requesting sensor data...
+Bytes received: 14
+‚úÖ Sensor Values:
+Accel X: -2240
+Accel Y: 384
+Accel Z: 16604
+Total acceleration(g): 1.02
+------
+Requesting sensor data...
+Bytes received: 14
+‚úÖ Sensor Values:
+Accel X: -2376
+Accel Y: 296
+Accel Z: 16584
+Total acceleration(g): 1.02
+------
+Requesting sensor data...
+Bytes received: 14
+‚úÖ Sensor Values:
+Accel X: -2300
+Accel Y: 340
+Accel Z: 16628
+Total acceleration(g): 1.02
+manual trigger pressed! Triggering alert ...
+------
+Requesting sensor data...
+Bytes received: 14
+‚úÖ Sensor Values:
+Accel X: -2280
+Accel Y: 328
+Accel Z: 16452
+Total acceleration(g): 1.01
+------

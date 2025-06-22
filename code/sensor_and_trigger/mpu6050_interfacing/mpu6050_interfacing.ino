@@ -20,6 +20,23 @@
 | SDA      | Data line to send/receive data(GPIO21) |
 | SCL      | Clock line for data timing(GPIO22)     |
 
+
+How Do We Detect a Fall? (Concept)
+You can use either or both of the following:
+
+1. Acceleration Magnitude Method
+We calculate the net acceleration using:
+
+ A=√(ax^2+ay^2+az^2 )
+
+Normally this is ~1g (around 9.8 m/s²).
+
+During a fall:
+
+You’ll see a sudden drop to near 0
+
+Followed by a spike when hitting the ground
+
 */
 
 #define MPU_ADDR 0x68  // MPU6050 I2C address
@@ -80,9 +97,23 @@ void loop() {
     Serial.print("Gyro X: "); Serial.println(gx);
     Serial.print("Gyro Y: "); Serial.println(gy);
     Serial.print("Gyro Z: "); Serial.println(gz);
+
+    float accX = ax / 16384.0; //scale factor for +-2g
+    float accY = ay / 16384.0;
+    float accZ = az / 16384.0;
+
+    float totalAcc = sqrt(accX*accX + accY*accY + accZ*accZ);
+    Serial.print("Total acceleration(g): ");
+    Serial.println(totalAcc);
+
+    if(totalAcc < 0.4){
+      Serial.println("Possible Fall detected! Triggering alert ...");
+    }
   } else {
     Serial.println("❌ Error: Did not receive expected 14 bytes.");
   }
+
+  
 
   Serial.println("------");
   delay(1000);  // Wait a second before next read
